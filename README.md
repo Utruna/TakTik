@@ -1,6 +1,6 @@
 # Taktik
 
-[![Téléchargements](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Futruna%2Ftaktik%2Fbadges%2Fdownloads.json)](https://github.com/utruna/taktik/releases)
+[![Téléchargements](https://raw.githubusercontent.com/utruna/taktik/badges/downloads.svg)](https://github.com/utruna/taktik/releases)
 [![Dernière release](https://img.shields.io/github/v/release/utruna/taktik?label=Derni%C3%A8re%20release&color=7c4dff)](https://github.com/utruna/taktik/releases/latest)
 
 Affiche en direct sur ton stream les sorts lancés par tes personnages Wakfu, sous forme d'icônes qui défilent dans OBS. Tu ne streames pas ? L'**affichage tête haute** les montre directement par-dessus le jeu. Après chaque combat, le **récap des combats** te montre qui a fait quoi : dégâts, soins, meilleur tour, sort par sort.
