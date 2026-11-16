@@ -5,9 +5,8 @@ name: Downloads badge
 # ceux-là sont lus par l'updater des applis déjà installées, à chaque
 # lancement, et gonflent le total de shields.io (`/github/downloads/.../total`).
 #
-# L'image du badge est dessinée ici (tools/downloads_badge.js) et publiée sur
-# la branche `badges` (recréée à chaque exécution, un seul commit) : le README
-# la lit directement sur raw.githubusercontent.com, sans service tiers.
+# Le total est écrit dans downloads.json, sur la branche `badges` (recréée à
+# chaque exécution, un seul commit), que le README lit via shields.io/endpoint.
 
 on:
   schedule:
@@ -21,9 +20,6 @@ jobs:
   badge:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
       - name: Count the installer downloads, every release included
         id: count
         env:
@@ -35,21 +31,19 @@ jobs:
           echo "total=${total}" >> "$GITHUB_OUTPUT"
           echo "Installer downloads: ${total}"
 
-      - name: Draw the badge
-        env:
-          TOTAL: ${{ steps.count.outputs.total }}
-        run: node tools/downloads_badge.js "${TOTAL}" "${RUNNER_TEMP}/downloads.svg"
-
-      - name: Publish downloads.svg on the badges branch
+      - name: Publish downloads.json on the badges branch
         env:
           TOTAL: ${{ steps.count.outputs.total }}
         run: |
+          mkdir "${RUNNER_TEMP}/badge"
+          printf '{"schemaVersion":1,"label":"Téléchargements","message":"%s","color":"4a90e2","cacheSeconds":3600}\n' \
+            "${TOTAL}" > "${RUNNER_TEMP}/badge/downloads.json"
           git clone --quiet "https://x-access-token:${{ github.token }}@github.com/${GITHUB_REPOSITORY}.git" "${RUNNER_TEMP}/repo"
           cd "${RUNNER_TEMP}/repo"
           git checkout --quiet --orphan badges
           git rm -rfq .
-          cp "${RUNNER_TEMP}/downloads.svg" .
-          git add downloads.svg
+          cp "${RUNNER_TEMP}/badge/downloads.json" .
+          git add downloads.json
           git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' \
             commit --quiet -m "chore: downloads badge (${TOTAL})"
           git push --quiet --force origin badges
