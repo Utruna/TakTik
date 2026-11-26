@@ -1,5 +1,6 @@
 //! The spell and class icons shipped with the app: data/spellIcons.json (built
-//! by tools/scrape_spell_icons.js) and ui/assets/icons/classes/*.png.
+//! by tools/scrape_spell_icons.js) and ui/assets/icons/classes/*.png — plus
+//! the downloaded icon pack's spells (see icon_pack), on top.
 
 use serde_json::{json, Map, Value};
 use std::collections::HashMap;
@@ -24,7 +25,7 @@ const BREEDS: [(&str, &str); 18] = [
 ];
 
 /// Spells any class can have (items, mounts…): they say nothing of the class.
-const SHARED_SPELLS_CLASS: &str = "commun";
+pub const SHARED_SPELLS_CLASS: &str = "commun";
 
 const PREVIEW_COLORS:[(u8, u8, u8); 6] =
     [(74, 144, 226), (220, 50, 50), (76, 175, 80), (171, 71, 188), (255, 167, 38), (38, 198, 218)];
@@ -41,7 +42,26 @@ pub struct Catalog {
 impl Catalog {
     /// `has_asset` tells whether a ui/ file exists (the class emblems).
     pub fn load(has_asset: impl Fn(&str) -> bool) -> Self {
-        let table: Map<String, Value> = serde_json::from_str(SPELL_ICONS_JSON).unwrap_or_default();
+        Self::load_with_pack(has_asset, None)
+    }
+
+    /// `pack`: the icon pack's class -> spell name -> icon id. Its spells are
+    /// added to the shipped table, or replace a shipped spell's icon; spells
+    /// whose icon file is missing are skipped.
+    pub fn load_with_pack(has_asset: impl Fn(&str) -> bool, pack: Option<Map<String, Value>>) -> Self {
+        let mut table: Map<String, Value> = serde_json::from_str(SPELL_ICONS_JSON).unwrap_or_default();
+        for (class, spells) in pack.into_iter().flatten() {
+            let Some(spells) = spells.as_object() else { continue };
+            let class_table = table.entry(class).or_insert_with(|| Value::Object(Map::new()));
+            let Some(class_table) = class_table.as_object_mut() else { continue };
+            for (name, icon_id) in spells {
+                let Some(icon_id) = icon_id.as_u64() else { continue };
+                let icon = crate::icon_pack::spell_icon_path(icon_id);
+                if has_asset(&icon) {
+                    class_table.insert(name.clone(), json!({ "iconId": icon_id.to_string(), "icon": icon }));
+                }
+            }
+        }
 
         let mut preview_pool = Vec::new();
         for (hero_class, spells) in &table {

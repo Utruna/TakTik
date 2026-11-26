@@ -25,6 +25,11 @@ serde_json = { version = "1", features = ["preserve_order"] }
 regex = "1"
 unicode-normalization = "0.1"
 tokio = { version = "1", features = ["rt", "net", "io-util", "sync", "macros", "time"] }
+# The icon pack download: the same reqwest/rustls the updater plugin already
+# pulls in, so nothing new gets built.
+reqwest = { version = "0.13", default-features = false, features = ["rustls-no-provider"] }
+rustls = { version = "0.23", default-features = false, features = ["ring"] }
+base64 = "0.23"
 
 [target.'cfg(windows)'.dependencies]
 winreg = "0.56"

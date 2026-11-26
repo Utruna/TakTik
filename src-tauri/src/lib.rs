@@ -7,6 +7,7 @@ pub mod app_state;
 pub mod autostart;
 pub mod catalog;
 pub mod fight_recap;
+pub mod icon_pack;
 pub mod commands;
 pub mod ingame_window;
 pub mod loader_page;
@@ -173,7 +174,9 @@ fn setup(app: &AppHandle, launched_at_login: bool) -> Result<(), Box<dyn std::er
     // window (frontendDist = ui/): one copy serves both.
     let resolver = app.asset_resolver();
     let files: FileSource = Arc::new(move |path: &str| resolver.get(path.to_string()).map(|asset| asset.bytes));
-    let catalog = Catalog::load(|path| files(path).is_some());
+    let pack_dir = icon_pack::dir(&data_dir);
+    let catalog = Catalog::load_with_pack(|path| files(path).is_some(), icon_pack::load_spells(&pack_dir));
+    icon_pack::spawn_update(pack_dir);
 
     let handle = app.clone();
     let hud: HudHandler = Arc::new(move |request| match request {
@@ -293,6 +296,9 @@ pub fn run() {
     // An isolated profile (demo captures) runs next to the user's own instance.
     let isolated_profile = std::env::var_os("TAKTIK_DATA_DIR").is_some();
 
+    let mut context = tauri::generate_context!();
+    icon_pack::put_in_front(&mut context, icon_pack::dir(&data_dir()));
+
     let mut builder = tauri::Builder::default();
     if !isolated_profile {
         // Only one instance may run at a time — a second launch (e.g.
@@ -339,7 +345,7 @@ pub fn run() {
             commands::set_ingame_overlay_only_over_wakfu,
         ])
         .setup(move |app| setup(app.handle(), launched_at_login))
-        .build(tauri::generate_context!())
+        .build(context)
         .expect("error while building the app")
         .run(|_app, event| match event {
             // Closing the settings window must not quit: the log reader and
