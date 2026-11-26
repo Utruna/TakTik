@@ -1,3 +1,18 @@
+## v2.3.4
+
+### Nouvelle classe : Bellaphone
+
+Le Bellaphone est reconnu : il se choisit dans les réglages comme les autres classes, avec son emblème, et ses 36 sorts ont leur icône. Dans le récap, un allié Bellaphone non configuré est aussi reconnu à sa classe.
+
+### Icônes des sorts à jour
+
+Les icônes reprennent celles du client Wakfu actuel. Elles se mettent maintenant à jour toutes seules : au lancement, l'appli télécharge en arrière-plan les nouvelles icônes quand il y en a, et les utilise à partir du lancement suivant. Plus besoin d'attendre une nouvelle version de Taktik quand Wakfu ajoute ou change un sort.
+
+- **Pandawa** : les nouveaux sorts ont leur icône (Fût Et, Marcher droit, Tunnel vision, Fermentation lactique, Goutte de trop, Cyanooze, Pandapéro, Dernier verre).
+- **Nouveaux sorts** : Débalisage massif (Cra), Kaboom (Roublard), Bidouillage (Steamer), Carapace d'épines et La meilleure défense est l'attaque (Féca), et les sorts communs Inspiration, Evasion, Interception, Carnage, Rock, Médecine, Motivation et Fluctuation.
+- **Icônes corrigées** : Entrechoquement (Zobal) a sa vraie icône, Portail céleste (Eliotrope) et Transfert sanguin (Sacrieur) prennent celle du jeu.
+- **Sorts de quête** : Attirance et Vengeance ont leur icône. Attirance n'affiche plus l'icône du sort Sacrieur du même nom, sauf pour un Sacrieur.
+
 ## v2.3.3
 
 ### Wakfu Combo Overlay devient Taktik

@@ -7,7 +7,7 @@ const CLASSES = [
   ['xelor', 'Xélor'], ['ecaflip', 'Ecaflip'], ['eniripsa', 'Eniripsa'], ['iop', 'Iop'],
   ['cra', 'Cra'], ['sadida', 'Sadida'], ['sacrieur', 'Sacrieur'], ['pandawa', 'Pandawa'],
   ['roublard', 'Roublard'], ['zobal', 'Zobal'], ['ouginak', 'Ouginak'], ['steamer', 'Steamer'],
-  ['eliotrope', 'Eliotrope'], ['huppermage', 'Huppermage'],
+  ['eliotrope', 'Eliotrope'], ['huppermage', 'Huppermage'], ['bellaphone', 'Bellaphone'],
 ].sort((a, b) => a[1].localeCompare(b[1], 'fr'));
 
 const CLASS_LABELS = new Map(CLASSES);

@@ -12,7 +12,7 @@ const CLASS_LABELS = new Map([
   ['xelor', 'Xélor'], ['ecaflip', 'Ecaflip'], ['eniripsa', 'Eniripsa'], ['iop', 'Iop'],
   ['cra', 'Cra'], ['sadida', 'Sadida'], ['sacrieur', 'Sacrieur'], ['pandawa', 'Pandawa'],
   ['roublard', 'Roublard'], ['zobal', 'Zobal'], ['ouginak', 'Ouginak'], ['steamer', 'Steamer'],
-  ['eliotrope', 'Eliotrope'], ['huppermage', 'Huppermage'],
+  ['eliotrope', 'Eliotrope'], ['huppermage', 'Huppermage'], ['bellaphone', 'Bellaphone'],
 ]);
 const ELEMENT_COLORS = {
   Feu: '#f97316', Eau: '#38bdf8', Terre: '#b08850', Air: '#a3e635', Neutre: '#9ca3af', Lumière: '#fde68a', Stasis: '#a78bfa',

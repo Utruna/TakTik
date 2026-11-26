@@ -159,6 +159,14 @@
     "Armure de la Paix": {
       "iconId": "2271",
       "icon": "assets/icons/feca/2271.png"
+    },
+    "La meilleure défense est l'attaque": {
+      "iconId": "5245",
+      "icon": "assets/icons/feca/5245.png"
+    },
+    "Carapace d'épines": {
+      "iconId": "685",
+      "icon": "assets/icons/feca/685.png"
     }
   },
   "osamodas": {
@@ -1599,6 +1607,10 @@
     "Flèche lumineuse": {
       "iconId": "2356",
       "icon": "assets/icons/cra/2356.png"
+    },
+    "Débalisage massif": {
+      "iconId": "615",
+      "icon": "assets/icons/cra/615.png"
     }
   },
   "sadida": {
@@ -2089,6 +2101,38 @@
     "Tonneau": {
       "iconId": "2192",
       "icon": "assets/icons/pandawa/2192.png"
+    },
+    "Fût Et": {
+      "iconId": "2211",
+      "icon": "assets/icons/pandawa/2211.png"
+    },
+    "Marcher droit": {
+      "iconId": "5352",
+      "icon": "assets/icons/pandawa/5352.png"
+    },
+    "Tunnel vision": {
+      "iconId": "1821",
+      "icon": "assets/icons/pandawa/1821.png"
+    },
+    "Fermentation lactique": {
+      "iconId": "7053",
+      "icon": "assets/icons/pandawa/7053.png"
+    },
+    "Goutte de trop": {
+      "iconId": "957",
+      "icon": "assets/icons/pandawa/957.png"
+    },
+    "Cyanooze": {
+      "iconId": "5149",
+      "icon": "assets/icons/pandawa/5149.png"
+    },
+    "Pandapéro": {
+      "iconId": "5150",
+      "icon": "assets/icons/pandawa/5150.png"
+    },
+    "Dernier verre": {
+      "iconId": "7093",
+      "icon": "assets/icons/pandawa/7093.png"
     }
   },
   "roublard": {
@@ -2267,6 +2311,10 @@
     "Roublabot": {
       "iconId": "1819",
       "icon": "assets/icons/roublard/1819.png"
+    },
+    "Kaboom": {
+      "iconId": "6485",
+      "icon": "assets/icons/roublard/6485.png"
     }
   },
   "zobal": {
@@ -2431,8 +2479,8 @@
       "icon": "assets/icons/zobal/7113.png"
     },
     "Entrechoquement": {
-      "iconId": "malus_resist_all",
-      "icon": "assets/icons/zobal/malus_resist_all.png"
+      "iconId": "7084",
+      "icon": "assets/icons/zobal/7084.png"
     },
     "Masque de psychopathe": {
       "iconId": "7081",
@@ -2801,6 +2849,10 @@
     "Canonnier": {
       "iconId": "2812",
       "icon": "assets/icons/steamer/2812.png"
+    },
+    "Bidouillage": {
+      "iconId": "5351",
+      "icon": "assets/icons/steamer/5351.png"
     }
   },
   "eliotrope": {
@@ -2913,8 +2965,8 @@
       "icon": "assets/icons/eliotrope/7185.png"
     },
     "Portail céleste": {
-      "iconId": "7813",
-      "icon": "assets/icons/eliotrope/7813.png"
+      "iconId": "5143",
+      "icon": "assets/icons/eliotrope/5143.png"
     },
     "Disciple du portail": {
       "iconId": "5348",
@@ -3167,6 +3219,152 @@
       "icon": "assets/icons/huppermage/5578.png"
     }
   },
+  "bellaphone": {
+    "Candela": {
+      "iconId": "8644",
+      "icon": "assets/icons/bellaphone/8644.png"
+    },
+    "Furole": {
+      "iconId": "8645",
+      "icon": "assets/icons/bellaphone/8645.png"
+    },
+    "Pyrolyse": {
+      "iconId": "8646",
+      "icon": "assets/icons/bellaphone/8646.png"
+    },
+    "Ondée": {
+      "iconId": "8647",
+      "icon": "assets/icons/bellaphone/8647.png"
+    },
+    "Lagune": {
+      "iconId": "8648",
+      "icon": "assets/icons/bellaphone/8648.png"
+    },
+    "Hydrolyse": {
+      "iconId": "8649",
+      "icon": "assets/icons/bellaphone/8649.png"
+    },
+    "Isthme": {
+      "iconId": "8650",
+      "icon": "assets/icons/bellaphone/8650.png"
+    },
+    "Alios": {
+      "iconId": "8651",
+      "icon": "assets/icons/bellaphone/8651.png"
+    },
+    "Xylème": {
+      "iconId": "8652",
+      "icon": "assets/icons/bellaphone/8652.png"
+    },
+    "Aquilon": {
+      "iconId": "8653",
+      "icon": "assets/icons/bellaphone/8653.png"
+    },
+    "Anima": {
+      "iconId": "8654",
+      "icon": "assets/icons/bellaphone/8654.png"
+    },
+    "Zéphyr": {
+      "iconId": "8655",
+      "icon": "assets/icons/bellaphone/8655.png"
+    },
+    "Aurora": {
+      "iconId": "8656",
+      "icon": "assets/icons/bellaphone/8656.png"
+    },
+    "Nascens": {
+      "iconId": "8657",
+      "icon": "assets/icons/bellaphone/8657.png"
+    },
+    "Lumen": {
+      "iconId": "8658",
+      "icon": "assets/icons/bellaphone/8658.png"
+    },
+    "Domoko": {
+      "iconId": "8661",
+      "icon": "assets/icons/bellaphone/8661.png"
+    },
+    "Nogdra": {
+      "iconId": "8659",
+      "icon": "assets/icons/bellaphone/8659.png"
+    },
+    "Drosera": {
+      "iconId": "8660",
+      "icon": "assets/icons/bellaphone/8660.png"
+    },
+    "Souffle d'Aerafal": {
+      "iconId": "8662",
+      "icon": "assets/icons/bellaphone/8662.png"
+    },
+    "Murmure": {
+      "iconId": "8663",
+      "icon": "assets/icons/bellaphone/8663.png"
+    },
+    "Chant Emeraude": {
+      "iconId": "8664",
+      "icon": "assets/icons/bellaphone/8664.png"
+    },
+    "Vocalises": {
+      "iconId": "8665",
+      "icon": "assets/icons/bellaphone/8665.png"
+    },
+    "Thalasso": {
+      "iconId": "8666",
+      "icon": "assets/icons/bellaphone/8666.png"
+    },
+    "Chant Turquoise": {
+      "iconId": "8667",
+      "icon": "assets/icons/bellaphone/8667.png"
+    },
+    "Souffle d'Ignemikhal": {
+      "iconId": "8668",
+      "icon": "assets/icons/bellaphone/8668.png"
+    },
+    "Inflammation": {
+      "iconId": "8669",
+      "icon": "assets/icons/bellaphone/8669.png"
+    },
+    "Chant Pourpre": {
+      "iconId": "8670",
+      "icon": "assets/icons/bellaphone/8670.png"
+    },
+    "Égide de la Source": {
+      "iconId": "8671",
+      "icon": "assets/icons/bellaphone/8671.png"
+    },
+    "Arkose": {
+      "iconId": "8672",
+      "icon": "assets/icons/bellaphone/8672.png"
+    },
+    "Chant Ocre": {
+      "iconId": "8673",
+      "icon": "assets/icons/bellaphone/8673.png"
+    },
+    "Lumière du rassemblement": {
+      "iconId": "8674",
+      "icon": "assets/icons/bellaphone/8674.png"
+    },
+    "Nascension lumineuse": {
+      "iconId": "8675",
+      "icon": "assets/icons/bellaphone/8675.png"
+    },
+    "Chant Ivoire": {
+      "iconId": "8676",
+      "icon": "assets/icons/bellaphone/8676.png"
+    },
+    "Métamorphose obscure": {
+      "iconId": "8677",
+      "icon": "assets/icons/bellaphone/8677.png"
+    },
+    "Ancre des ténèbres": {
+      "iconId": "8678",
+      "icon": "assets/icons/bellaphone/8678.png"
+    },
+    "Chant Ebène": {
+      "iconId": "8679",
+      "icon": "assets/icons/bellaphone/8679.png"
+    }
+  },
   "commun": {
     "Maîtrise d'Armes": {
       "iconId": "5622",
@@ -3179,6 +3377,46 @@
     "Os à Moelle": {
       "iconId": "6327",
       "icon": "assets/icons/commun/6327.png"
+    },
+    "Inspiration": {
+      "iconId": "4956",
+      "icon": "assets/icons/commun/4956.png"
+    },
+    "Evasion": {
+      "iconId": "4957",
+      "icon": "assets/icons/commun/4957.png"
+    },
+    "Interception": {
+      "iconId": "4958",
+      "icon": "assets/icons/commun/4958.png"
+    },
+    "Carnage": {
+      "iconId": "5144",
+      "icon": "assets/icons/commun/5144.png"
+    },
+    "Rock": {
+      "iconId": "5145",
+      "icon": "assets/icons/commun/5145.png"
+    },
+    "Médecine": {
+      "iconId": "5146",
+      "icon": "assets/icons/commun/5146.png"
+    },
+    "Motivation": {
+      "iconId": "5237",
+      "icon": "assets/icons/commun/5237.png"
+    },
+    "Fluctuation": {
+      "iconId": "5621",
+      "icon": "assets/icons/commun/5621.png"
+    },
+    "Attirance": {
+      "iconId": "8578",
+      "icon": "assets/icons/commun/8578.png"
+    },
+    "Vengeance": {
+      "iconId": "8587",
+      "icon": "assets/icons/commun/8587.png"
     }
   }
 }

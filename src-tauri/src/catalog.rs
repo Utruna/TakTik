@@ -9,19 +9,20 @@ const SPELL_ICONS_JSON: &str = include_str!("../../data/spellIcons.json");
 
 /// Every class the game has, by the id the settings page and the icon
 /// folders use.
-pub const CLASSES: [&str; 18] = [
+pub const CLASSES: [&str; 19] = [
     "feca", "osamodas", "enutrof", "sram", "xelor", "ecaflip", "eniripsa", "iop", "cra", "sadida",
     "sacrieur", "pandawa", "roublard", "zobal", "ouginak", "steamer", "eliotrope", "huppermage",
+    "bellaphone",
 ];
 
 /// The game's class ids, as the "[_FL_] … breed : N" join lines give them.
 /// Checked against real fights: 6, 7, 8, 11, 13, 19; the others are the
 /// game's published ids.
-const BREEDS: [(&str, &str); 18] = [
+const BREEDS: [(&str, &str); 19] = [
     ("1", "feca"), ("2", "osamodas"), ("3", "enutrof"), ("4", "sram"), ("5", "xelor"), ("6", "ecaflip"),
     ("7", "eniripsa"), ("8", "iop"), ("9", "cra"), ("10", "sadida"), ("11", "sacrieur"), ("12", "pandawa"),
     ("13", "roublard"), ("14", "zobal"), ("15", "ouginak"), ("16", "steamer"), ("18", "eliotrope"),
-    ("19", "huppermage"),
+    ("19", "huppermage"), ("20", "bellaphone"),
 ];
 
 /// Spells any class can have (items, mounts…): they say nothing of the class.
@@ -109,7 +110,14 @@ impl Catalog {
             let (_, spells) = self.spell_icons.iter().find(|(c, _)| c == class)?;
             spells.get(spell_name)
         });
+        // Then the shared spells, before another class's same-named spell
+        // (the quest "Attirance" is not the Sacrieur's).
+        let shared = || {
+            let (_, spells) = self.spell_icons.iter().find(|(c, _)| c == SHARED_SPELLS_CLASS)?;
+            spells.get(spell_name)
+        };
         in_class
+            .or_else(shared)
             .or_else(|| self.spell_icons.iter().find_map(|(_, spells)| spells.get(spell_name)))
             .map(String::as_str)
     }
